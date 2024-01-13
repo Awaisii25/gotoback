@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Khan;
+use App\Models\Booknow;
 use Illuminate\Http\Request;
 
-class backController extends Controller
+class BooknowController extends Controller
 {
-    public function backdata(Request $req){
+    public function booknow(Request $req){
         $formFields = $req->validate([
             "name" => ['required'],
+            "phone" => ['required'],
+            "age" => ['required'],
             "email" => ['required'],
-            "contact" => ['required'],
             "textarea" => ['required'],
         ]);
-        Khan::create($formFields);
-        // echo "done";
+        Booknow::create($formFields);
         return back();
+
     }
 }
