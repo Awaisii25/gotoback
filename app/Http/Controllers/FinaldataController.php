@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\contactMail;
 use App\Models\Finaldata;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FinaldataController extends Controller
 {
@@ -15,7 +17,8 @@ class FinaldataController extends Controller
         "business" => ['required'],
         "msg" => ['required'],
     ]);
-     Finaldata  ::create($formFields);
+     Finaldata::create($formFields);
+    Mail::to('awaismarwan75@gmail.com')->send(new contactMail($formFields));
      return back();
 }
 }

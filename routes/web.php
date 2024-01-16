@@ -30,3 +30,4 @@ Route::post('/ragester' , [userController::class ,'ragester']);
 Route::post('/insert-data', [backController::class, 'backdata']);
 Route::post('/book-now', [BooknowController::class,'booknow' ]);
 Route::post('/last-input', [FinaldataController::class, 'finaldata']);
+
